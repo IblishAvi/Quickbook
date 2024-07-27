@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search and Filters</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">      
+
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <aside id="sidebar">
+        <div class="container">
+          <div class="heading">
+            <span class="material-symbols-outlined">filter_alt</span>
+            <h1>Filters:</h1>
+          </div>
+          <div class="filters">
+            <label for="dateFilter">Date:</label>
+            <input type="date" id="dateFilter" />
+            <label for="locationFilter">Location:</label>
+            <!-- <input type="locationFilter" name="turf location"> -->
+            <select id="locationFilter">
+              <option value="All Location">All Location</option>
+
+              <option value="Mumbai">Mumbai</option>
+              <option value="Delhi">Delhi</option>
+              <option value="kerala">Kerala</option>
+              <option value="Kolkatta">Kolkatta</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Banglore">Banglore</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Noida">Noida</option>
+              <option value="Gandhinagar">Gandhinagar</option>
+              <option value="Pune">Pune</option>
+              <option value="Jaipur">Jaipur</option>
+              <option value="Patna">Patna</option>
+              <option value="Lucknow">Lucknow</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Dehradun">Dehradun</option>
+              <option value="Masoorie">Masoorie</option>
+              <option value="Nainital">Nainital</option>
+              <option value="Ludhiana">Ludhiana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+            </select>
+          </div>
+          <div id="btn">
+            <h4>Book Your Slot</h4>
+            <button onclick="change(this)" class="booking">
+              5:45 - 09:30
+              <p>AM</p>
+            </button>
+            <button class="booking" onclick="change(this)">
+              9:45 - 01:30
+              <p>PM</p>
+            </button>
+            <button class="booking" onclick="change(this)">
+              2:30 - 06:15
+              <p>PM</p>
+            </button>
+            <button class="booking" onclick="change(this)">
+              6:30 - 10:15
+              <p>PM</p>
+            </button>
+          </div>
+
+          <section class="filter-section">
+            <h4>Price Range</h4>
+            <div class="price-input">
+              <div id="content">
+                <button id="dec" onclick="Decrement()">
+                  <span class="material-symbols-outlined md-24">remove </span>
+                </button>
+                <div id="num">50000</div>
+                <button id="inc" onclick="Increment()">
+                  <span class="material-symbols-outlined">add</span>
+                </button>
+              </div>
+            </div>
+            <!-- </div> -->
+          </section>
+
+          <button type="submit" id="submit-btn" onclick="applyFilters()">
+            Apply Filters
+          </button>
+
+          <div id="results">
+            <!-- Results will be dynamically populated here -->
+          </div>
+        </div>
+      </aside>
+      <main>
+        <div class="main">
+          <form action="#">
+            <span class="material-symbols-outlined">search</span>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search product"
+              onkeyup="search()"
+            />
+            <!-- <button type="submit" id="submit" onclick="search()">Search</button> -->
+          </form>
+          <div class="product-list">
+            
+           
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Delhi1.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Delhi</h2>
+                </div>
+                <h3>85000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Banglore1.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Banglore</h2>
+                </div>
+                <h3>80000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/banglore4.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Banglore</h2>
+                </div>
+                <h3>90000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Banglore2.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Banglore</h2>
+                </div>
+                <h3>85000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Banglore3.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Banglore</h2>
+                </div>
+                <h3>70000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Banglore5.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Banglore</h2>
+                </div>
+                <h3>80000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Delhi2.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Delhi</h2>
+                </div>
+                <h3>75000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Delhi3.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Delhi</h2>
+                </div>
+                <h3>80000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/punjab1.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Punjab</h2>
+                </div>
+                <h3>75000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Punjab2.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Punjab</h2>
+                </div>
+                <h3>85000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-26">
+              <img src="./image/punjab3.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Punjab</h2>
+                </div>
+                <h3>75000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Kolkatta.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Kolkatta</h2>
+                </div>
+                <h3>80000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Kolkatta1.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Kolkatta</h2>
+                </div>
+                <h3>70000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/mumbai1.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Mumbai</h2>
+                </div>
+                <h3>95000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/kerala2.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Kerala</h2>
+                </div>
+                <h3>95000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/mumbai2.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Mumbai</h2>
+                </div>
+                <h3>85000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Kerala3.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Kerala</h2>
+                </div>
+                <h3>45000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Kerala4.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Kerala</h2>
+                </div>
+                <h3>60000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Kerala5.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Kerala</h2>
+                </div>
+                <h3>65000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Kerala6.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Kerala</h2>
+                </div>
+                <h3>75000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Kerala7.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Kerala</h2>
+                </div>
+                <h3>80000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Kerala8.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Kerala</h2>
+                </div>
+                <h3>75000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Kerala9.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Kerala</h2>
+                </div>
+                <h3>85000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Kerala1.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Kerala</h2>
+                </div>
+                <h3>50000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-21">
+              <img src="./image/kerala2.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Kerala</h2>
+                </div>
+                <h3>40000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Chennai.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Chennai</h2>
+                </div>
+                <h3>70000</h3>
+              </div>
+            </div>
+            <div class="product" data-date="2024-07-20">
+              <img src="./image/Chennai2.jpg" alt="" />
+              <div class="prod-detail">
+                <div style="display: flex">
+                  <span class="material-symbols-outlined"> location_on </span>
+                  <h2>Chennai</h2>
+                </div>
+                <h3>75000</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="filter.js"></script>
+   
+  </body>
+</html>

@@ -1,0 +1,360 @@
+
+*{
+
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.material-symbols-outlined {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 25px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+body{
+    box-sizing: border-box;
+
+    height:100vh;
+    width: 100vw;
+    background:rgb(211, 211, 44);
+    display: flex;
+    
+   
+   
+
+}
+#wrapper{
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    margin-bottom: 50px;
+    overflow: hidden;
+    background:rgb(94, 138, 138); 
+    transition: all 300ms ease-in-out;
+
+}
+.main
+{
+    
+    width: 70vw;
+    height:100vh;
+    background-color: rgb(23, 171, 171);
+    align-items: right;
+    justify-content: right; 
+    border-radius:15px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: 4px 4px 30px rgb(0,0,0,0.5);
+    padding:20px;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+
+    
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+.main::-webkit-scrollbar{
+    display: none;
+}
+.container::-webkit-scrollbar{
+    display: none;
+}
+.main form {
+    width: 94%;
+    height:50px;
+    border: 2px solid rgb(82,74,235);
+    border-radius:4px;
+    display: flex;
+    margin-right: 22px;
+   
+
+
+}
+#submit{
+    padding:8px 10px;
+    height:45px;
+    background: #113f47;
+    /* margin-top:5px; */
+    margin-bottom: 5px;
+
+}
+form{
+    justify-content: center;
+    align-items: center;
+    margin:10px;
+    background: white;
+    
+}
+.main form span{
+    margin:0 auto;
+}
+.main form input{
+    width: 100%;
+    border:none;
+    outline: none;
+    font-size: 15px;
+    font-weight: 400;
+    box-shadow: none;
+    margin:2px;
+   
+    padding:15px;
+}
+.product-list{
+padding:10px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+
+position: relative;
+
+}
+.product{
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+
+    display: inline-block;
+    margin-top: 25px;
+    
+
+}
+
+.product-list img{
+    width: 400px;
+    height: 200px;
+    position: relative;
+    border-radius: 7px;
+    /* padding-left: 35px; */
+    filter: grayscale(100);
+
+}
+.product-list img:hover{
+    filter: grayscale(0);
+    transform: scale(1.05);
+    transition: 400ms;
+    box-shadow: 5px 5px 2px white;
+}
+.product-list .prod-detail{
+    margin-left: 25px;
+}
+.product-list .prod-detail h2{
+font-size: 20px;
+
+color: #1d1d1d;
+
+
+}
+.product-list .prod-detail{
+    padding:8px;
+    /* position: absolute; */
+    left:0;
+}
+.product-list .prod-detail h3{
+   
+    margin-left: 25px;
+    font-size: 18px;
+    color: #1d1d1d;
+    
+    
+    } 
+    
+input[type="text"], input[type="date"],input[type="range"], select {
+        width: 100%;
+        /* padding: 4px; */
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+ output{
+    width: 100vw;
+    padding-right:100px;
+    margin-bottom: 10px;
+       
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: none;
+  } 
+  
+button {
+    width: 100px;
+    height: 40px;
+    padding: 5px 5px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    font-size: large;
+    margin-bottom: 0px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+button:hover {
+    box-shadow: 2px 2px 2px rgb(255, 255, 255);
+  }
+  
+
+  
+#results {
+    margin-top: 20px;
+    padding:10px;
+  }
+  
+  /* Responsive adjustments */
+  @media (min-width:100px) and (max-width: 500px) {
+   
+    .container {
+      padding: 10px;
+    }
+    #wrapper{
+        overflow: visible;
+        flex-direction: column;
+       
+    }
+    .product-list img{
+        width: 90vw;
+        align-self:center;
+    }
+    .main{
+        width: 100vw;
+    }
+    aside{
+        flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: 200px) {
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+
+  }
+#sidebar{
+    background-color: rgb(23, 171, 171);
+    position: relative;
+    width: 1/4vw;
+    height: 100vh;
+    display: flex;
+    cursor: pointer;
+    border-radius: 5%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding:10px;
+  }
+.container{
+    height:100%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+
+}
+.heading{
+   
+    align-self: center;
+    display: flex;
+ 
+
+
+}
+.filters{
+    height:150px;
+    width: 285px;
+    font-weight: 700;
+    flex-wrap: wrap;
+    display: flex;
+    padding: 20px 20px 20px 0px;
+    justify-content: space-between;
+    background: rgb(23, 171, 171);
+    
+
+}
+#dateFilter{
+    background:rgb(177, 243, 244) ;
+    height:30px;
+}
+#locationFilter{
+    background:rgb(177, 243, 244) ;
+    height:30px;
+
+}
+#btn{
+    width: 300px;
+    display: inline-block;
+    margin:0 auto;
+    
+    /* background: #0056b3; */
+}
+#btn button{
+    width: 140px;
+    height:60px;
+    padding:15px;
+    margin-bottom: 10px;
+    background-color:rgb(28, 99, 129);
+}
+
+
+.field input{
+    width:100px;
+}
+
+.price-input{
+    
+    padding: 15px;
+    cursor:pointer;
+    width: 255px;
+    background-color: #113f47;
+    border-radius: 10px;
+    border: 1px solid blue;
+
+}
+#content{
+    display:flex;
+    
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    /* color:black; */
+    font-weight: 700;
+    display:flex;
+    background-color: #113f47;
+}
+
+
+   
+
+#submit-btn{
+    align-self: center;
+    margin-top:10px;
+    height:100px;
+    background: #0056b3;
+}
+
+.booking.active {
+    background-color: white; /* Change to your desired active color */
+    color: rgb(14, 154, 53); /* Text color for active state */
+  }
+  
