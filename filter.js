@@ -59,13 +59,44 @@ const Decrement = () => {
   content.innerHTML = value;
 }
 
-function change(clickedButton) {
-  let buttons = document.querySelectorAll('.booking');
-  buttons.forEach(button => {
-    button.classList.remove('active');
-  });
-  clickedButton.classList.add('active');
+const  InputSlider = document.getElementById('LengthSlider');
+const LengthDisplay = document.getElementById('LengthDisplay');
+
+let Price = 5000;
+handleslider();
+
+function handleslider() {
+  InputSlider.value = Price;
+  LengthDisplay.innerText = Price;
 }
+
+InputSlider.addEventListener("input", (e) => {
+  Price = e.target.value;
+  handleslider();
+});
+
+// code to filter the product by sport Categories.
+const sportFilters = document.querySelectorAll('#Sport-type button');
+const FilterableCards = document.querySelectorAll('.product-list .product');
+
+const filtercards = e =>{
+  document.querySelector(".active").classList.remove('active');
+  e.target.classList.add("active");
+
+  // iterate over each filterable card.
+  FilterableCards.forEach(card =>{
+    //Add "hide " class to hide the card Initially.
+    card.classList.add("hide");
+
+    //checks if the card matches the selected filter or all is selected
+    if(card.dataset.name ===e.target.dataset.name || e.target.dataset.name==="all"){
+      card.classList.remove("hide");
+    }
+  });
+}
+
+sportFilters.forEach(button =>button.addEventListener("click",filtercards));
+
 
 // Attach event listeners to search and apply filter button
 document.getElementById('submit-btn').addEventListener('click', applyFilters);
