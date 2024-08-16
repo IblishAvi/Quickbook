@@ -6,6 +6,7 @@
     padding:0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 
 }
 .material-symbols-outlined {
@@ -33,9 +34,7 @@ body{
     display: flex;
     height:100vh;
     width: 100vw;
-    background: rgb(38, 129, 190);
-    
-   
+    background:white;
    
 
 }
@@ -46,15 +45,20 @@ body{
     overflow:hidden;
     flex-direction: row-reverse;
     transition: all 300ms ease-in-out;
+    background-color: #0a4789;
 
 
 }
 #searchbar{
     background-color: #fff;
     width: 100%;
-    height: 52px;
+    height: 55px;
     display: flex;
-    gap:10px;
+    border: 2px solid black;
+}
+a{
+    text-decoration: none;
+    font-size: 1rem;
 }
 .icon{
     height: 50px;
@@ -67,11 +71,52 @@ body{
 
      
 }
+#Sport-type
+{
+    display: flex;
+    justify-content: center;
+    gap:100px;
+    align-items: center;
+    margin: 0 auto;
+}
+#Sport-type button.active{
+    background-color:rgba(29, 14, 236, 0.735);
+    color: white;
+}
+#Sport-type button{
+    height: 30px;
+    width: 120px;
+
+    background-color: #f7f2f2;
+    box-shadow: 2px 5px 2px rgb(141, 171, 150);
+    font-size: 1.3rem;
+    border-radius: 6px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    padding: 4px;
+}
+#feedback{
+    position: absolute;
+    bottom: 5rem;
+    left:1rem;
+    display: flex;
+    font-size: 1.25rem;
+    color: #f2ebeb;
+    gap:200px;
+    margin-left: 5px;
+}
+#response{
+    display: flex;
+    justify-content: baseline;
+    gap: 15px;
+}
 #searchInput{
     height:52px;
-    width: 50%;
+    width: 100%;
     margin-top: 0px;
-    border: none;
+    border:2px solid rgb(5, 5, 5);
+    font-size: 1.5rem;
+    box-shadow: 3px 3px 5px rgb(242, 133, 151) ;
 }
 
 h1{
@@ -110,13 +155,11 @@ body::-webkit-scrollbar{
 }
 form {
     height:50px;
-
-    border: 2px solid rgb(82,74,235);
     border-radius:4px;
     display: flex;
+    border:3px solid black;
     background: rgb(151, 132, 132);
     width: 100%;
-    border:1px solid black;
     position:fixed;
     justify-content: center;
     align-items: center;
@@ -126,16 +169,18 @@ h1{
     margin: 0 auto;
 }
 .navbar input{
-    border:none;
+    border:3px solid black;
     outline: none;
     font-size: 15px;
     font-weight: 400;
     box-shadow: none;
     margin-left: 0px;
+
 }
 .product-list{
 padding:10px;
 display: flex;
+box-shadow: #1d1d1d;
 flex-wrap: wrap;
 justify-content: space-around;
 
@@ -154,6 +199,10 @@ position: relative;
     
 
 }
+.product.hide{
+    display: none;
+
+}
 h3{
     font-size: 3rem;
 }
@@ -167,17 +216,22 @@ h3{
 .product-list img{
     width: 500px;
     height: 270px;
-    
+    box-shadow: 5px 2px 5px rgb(184, 176, 191);
     position: relative;
     border-radius: 7px;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+
+    border-right: 2px solid black;
+
     padding: 15px;
-    background-color: #2d5bc67c;
+    background-color: #101c387c;
+
 }
 .product-list img:hover{
-    filter: grayscale(0);
     transform: scale(1.05);
-    transition: 400ms;
-    box-shadow: 5px 5px 2px rgb(255, 255, 255);
+    transition: 5ms;
+    box-shadow: 5px 5px 2px rgb(149, 200, 227);
 }
 
 .product-list .prod-detail h2{
@@ -190,7 +244,10 @@ color: #1d1d1d;
 .product-list .prod-detail{
     padding:8px;
     /* position: absolute; */
-    background-color: #2d5bc67c;
+    background-color: #1fddee;
+    box-shadow: 5px 5px 5px rgb(9, 9, 9);
+    border: 3px solid  #040d20fb;
+    ;
     border-radius: 7px;
   
 
@@ -214,7 +271,7 @@ input[type="text"], input[type="date"],input[type="range"], select {
 output{
     width: 100%;
     margin-bottom: 10px;
-       
+    padding: 10px; 
     border: 1px solid #ccc;
     border-radius: 4px;
     transition: none;
@@ -258,6 +315,7 @@ button:hover {
     margin-top: 60px;
     margin-left: 15px;
     display: flex;
+    background-color: #0a4c92d2;
     cursor: pointer;
     padding:10px;
    
@@ -289,34 +347,33 @@ button:hover {
     justify-content: space-between;
     /* background: rgb(23, 171, 171); */
 }
-#dateFilter{
+#dateFilter,
+#locationFilter{
     background:rgb(177, 243, 244) ;
     height:50px;
+    width: 100%;
+    font-size: 1.5rem;
+
 }
 
 label{
-    font-size: larger;
+    font-size: 1.5rem;
+    color: white;
 }
 
-#locationFilter{
-    background:rgb(177, 243, 244) ;
-    width: 100%;
-    height:50px;
-
-}
 #btn{
     width: 100%;
-    display: inline-block;
     margin:0 auto;
+
     
     /* background: #0056b3; */
 }
-#btn button{
-    width: 49%;
-    height:60px;
-    padding:5px;
-    margin-top: 15px;
-    font-size: 1rem;
+#time input{
+    width: 100%;
+    height: 50px;
+    gap:50px;
+    font-size: 2rem;
+    border-radius: 7px;
 }
 
 
@@ -325,14 +382,46 @@ label{
 }
 
 .price-input{
-    margin-top: 10px;
-    padding: 10px;
+   
     cursor:pointer;
     width: 100%;
+    margin: 0 auto;
+    padding: 10px;
     /* background-color: #81b5be; */
     border-radius: 10px;
-    border: 1px solid blue;
 }
+.filter-section{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+#price-display{
+    width: 100%;
+    height: 30px;
+
+    gap:180px;
+    display:flex;
+    font-size: 1.5rem;
+    /* background-color: #94b1cf; */
+    margin:25px 0px;
+    border-radius: 7px;
+}
+#PriceInput{
+    font-size: 2rem;
+}
+#LengthSlider{
+    box-shadow: 2px 0px 2px rgb(200, 255, 255);
+}
+h6{
+    /* margin:10px; */
+    font-size: 1.5rem;
+}
+h5{
+    color:#fff;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
 #content{
     display:flex;
     
@@ -347,8 +436,10 @@ label{
     align-self: center;
     margin-top:10px;
     height:60px;
-    background: #0056b3;
-    font-size: larger;
+    background: #94b1cf;
+    font-size: 1.75rem;
+    box-shadow: 5px 5px 5px rgb(178, 178, 216);
+
 }
 
 .booking.active {
@@ -358,7 +449,7 @@ label{
   
 h4{
     margin-top: 50px;
-    font-size: larger;
+    font-size: 1.5rem;
 }
 
 
@@ -376,6 +467,9 @@ opacity: 1;
     body {
         margin: 0px;
         padding: 0px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
     }
     body::-webkit-scrollbar{
         display: none;
@@ -391,23 +485,35 @@ opacity: 1;
     }
     #wrapper {
       width: 100%;
-      height: auto; /* Adjust height to be auto for small screens */
+      margin-top: 70px;
+      height:auto; /* Adjust height to be auto for small screens */
       flex-wrap: wrap;
-      overflow: auto;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      cursor: pointer;
     }
-  
-   
+    
+    #Sport-type
+    {
+        display: flex;
+        justify-content: center;
+        gap:2px;
+        align-items: center;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
     #searchInput {
       width: 100%;
+      font-size: 1.5rem;
     }
   
     .hero-section {
       width: 100%;
       height: auto;
-      margin-top: 0;
       border-radius: 0; 
       padding: 10px;
       box-shadow: none; 
+
     }
   
     .product-list {
@@ -415,20 +521,26 @@ opacity: 1;
     }
 
     .product-list .prod-detail {
-        background-color: #2d5bc67c;
-        border-radius: 7px;
+        background-color: #1fddee;
+                border-radius: 7px;
     }
   
     .product-list img {
-      width: 400px;
+      width: 100%;
       height: 225px;
       padding: 15px;
-      background-color: #2d5bc67c;
+      background-color: #1d2e54af;
     }
   
     .product-list .prod-detail h2,
     .product-list .prod-detail h3 {
       font-size: 16px; 
+    }
+    #response{
+        display: flex;
+        justify-content: baseline;
+        gap: 5px;
+        margin-right: 15px;
     }
     h3{
         font-size: 2rem;
@@ -440,7 +552,8 @@ opacity: 1;
     form {
       width: 100%; 
       height: auto;
-      padding: 10px; 
+      padding: 10px;
+      z-index: 1; 
       border: 1px solid rgb(82,74,235);
     }
   
@@ -452,18 +565,20 @@ opacity: 1;
   
     #dateFilter,
     #locationFilter {
-      width: 100%;
-      align-items: center; 
+      width: 85vw;
+      box-shadow: 4px 4px 5px salmon;
+      font-size: 1.25rem;
     }
   
-    #btn button {
-      width: 170px; 
-      height: auto;
-      display: inline-block; 
-      font-size: 0.9rem;
-      margin-top: 10px;
-    }
-  
+  #btn{
+    width: 100%;
+    height: auto;
+    margin:0px;
+  }
+  label{
+    font-size: 1.5rem;
+    color: #fff;
+  }
     .price-input {
         display: flex;
         justify-content: space-evenly;
@@ -482,14 +597,23 @@ opacity: 1;
     }
   
     #sidebar{
-        width: 440px;
+        width:100%;
         height: 100vh;
-        margin-top: 60px;
-        margin-left: 15px;
+        margin-top: 20px;
+        margin-left: 10px;
         display: flex;
         cursor: pointer;
         padding:10px;
        
       }
+      #time{
+        width: 100%;
+      }
+      #results {
+        margin-top: 50px;
+        padding:10px;
+        width: 100%;
+      }
+      
   }
   
