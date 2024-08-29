@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search and Filters</title>
-    <!-- <link rel="stylesheet" href="trial.css" /> -->
     <link rel="stylesheet" href="styles.css">
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -22,7 +21,9 @@
               placeholder="Search product"
               onkeyup="search()"
             />
-          </div>
+        </div>
+        <button>Find Nearby Turfs</button> 
+
         </form>
       </div>
     </nav> 
@@ -39,34 +40,28 @@
   
             <div class="filters">
               <label for="dateFilter">Date:</label>
-              <input type="date" id="dateFilter" />
+              <input type="date" id="dateFilter"/>
               <label for="locationFilter">Location:</label>
-              <select id="locationFilter" >
-                <option value="All Location"> Locations</option>
-                <option value="Mumbai">Mumbai</option>
-                <option value="Delhi">Delhi</option>
-                <option value="kerala">Kerala</option>
-                <option value="Kolkatta">Kolkatta</option>
-                <option value="Punjab">Punjab</option>
-                <option value="Banglore">Banglore</option>
-                <option value="Hyderabad">Hyderabad</option>
-                <option value="Chennai">Chennai</option>
-                <option value="Noida">Noida</option>
-                <option value="Gandhinagar">Gandhinagar</option>
-                <option value="Pune">Pune</option>
-                <option value="Jaipur">Jaipur</option>
-                <option value="Patna">Patna</option>
-                <option value="Lucknow">Lucknow</option>
-                <option value="Chandigarh">Chandigarh</option>
-                <option value="Dehradun">Dehradun</option>
-                <option value="Masoorie">Masoorie</option>
-                <option value="Nainital">Nainital</option>
-                <option value="Ludhiana">Ludhiana</option>
-                <option value="Himachal Pradesh">Himachal Pradesh</option>
-              </select>
-            </div>
+              <input list="location" name="locationFilter" id="locationFilter"  placeholder="Choose Location"/>
+               <datalist id="location">
+                <option onclick="getUserLocation()" value="Your Location"> </option>
+                <option value="Mumbai">
+                <option value="Delhi">
+                <option value="kerala">
+                <option value="Kolkatta">
+                <option value="Punjab">
+                <option value="Banglore">
+                <option value="Hyderabad">
+                <option value="Chennai">
+                <option value="Noida">
+                <option value="Gandhinagar">
+                <option value="Pune">
+                <option value="Jaipur">
+                <option value="Patna">
+              </datalist>
+            
             <div id="btn">
-              <h4>Slot timing</h4>
+              <h4>SLOT BOOKING</h4>
               <div id="time"> 
                 <label for="TimeFilter">Clock:</label>
                 <input type="Time" id="TimeFilter" />
@@ -86,19 +81,19 @@
               <div class="rangeInput">
                <input type="range" min="1000" max="10000" step="500" id="LengthSlider">
               </div>
-              <!-- </div> -->
             </section>
   
             <button type="submit" id="submit-btn" onclick="applyFilters()">
               Apply 
             </button>
   
-            <div id="results">
-              <!-- Results will be dynamically populated here -->
-            </div>
+          </div> 
           </div>
         </section>
-         <main class="hero-section">
+         <main class="hero-section"> 
+          <div id="results">
+            <!-- Results will be dynamically populated here -->
+          </div>
           <div id="Sport-type">
             <button class="active" data-name="all"> Show All</button>
             <button data-name="Volleyball">Volleyball</button>
@@ -110,745 +105,815 @@
           <div class="main">
             <div class="product-list">
               <div class="product" data-name="Volleyball" data-date="2024-07-20">
-                <img src="/Quickbook/Delhi1.jpg" alt="Delhi" usemap="#img1"/>
+                <img src="/Quickbook/Delhi1.jpg" alt="Delhi" usemap="#img1" target="_blank"/>
                 <map name="img1">
                   <area shape="default" coords="" href="https://maps.app.goo.gl/G4yq3L7NpGMifcKfA" alt="Delhi">
                 </map>
-                <div id="feedback">
-                  <div id="Sport-type">
-                    <h5>Volleyball Field</h5>
-                  </div>
-                  <div id="response">
-                    <span id="like" onclick="changecolor" class="material-symbols-outlined">thumb_up</span>
-                    <span id="Unlike" onclick="changecolor" class="material-symbols-outlined">thumb_down</span>
-                    <span id="favorite"onclick="changecolor"  class="material-symbols-outlined">
-                      favorite
-                      </span>
 
+                <div class="open">Show More</div>
+                <div id="feedback">
+                    <div id="SportField">
+                    <h5>Volleyball Field</h5>
+                    </div>
+                    <div id="location">
+                  <p><strong>Address:</strong><br><i>Suraj Bhan DAV Public School,
+                    Poorvi Marg, New Delhi, Delhi 110057</i></p>
+                     
+                    </div>
+                    <div id="prc">
+                      <div> <p><b>Sport:</b><br><i>Tennis</i><br><i>Volleyball</i></p>
+                      </div>
+                      <div>
+  <h3>8500</h3>                        <a href="Booking.html">Book Now</a></div>
+                    </div>
+                    
                   </div>
-                 
-                </div>
-                <div class="prod-detail">
-                  <div style="display: flex">
-                    <span class="material-symbols-outlined"> location_on </span>
-                    <h2>Delhi</h2>
+                  <div class="prod-detail">
+                    <div style="display: flex">
+                      <span class="material-symbols-outlined"> location_on </span>
+                      <h2>Delhi</h2>
+                    </div>
+                   
+                   
                   </div>
-                  <div>
-                    <h3>8500</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>
-                </div>
+                  <div class="rating"><img src="/Quickbook/3star.png" alt=""></div>
+                  
               </div>
               <div class="product" data-name="Football" data-date="2024-07-20">
-                <img src="/Quickbook/Banglore1.jpg" alt=""  usemap="#img2"/>
+                <img src="/Quickbook/Banglore1.jpg" alt=""  usemap="#img2" />
                 <map name="img2"> <area shape="default" coords="" href="https://maps.app.goo.gl/ope8QE2nCqu7y2Lr9" alt="Banglore Football Turf"></map>
+                <div class="open">Show More</div>
                 <div id="feedback">
-                  <div id="Sport-type">
+                  <div id="SportField">
                     <h5>Football Field</h5>
                   </div>
-                  <div id="response">
-                      <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
-
+                  <div id="location">
+                <p><strong>Address:</strong><br><i>Royal Towers Hennur RingRoad Junction
+                  Kalyan Nagar, Bengaluru</i></p>
+                   
                   </div>
-                 
+                  <div id="prc">
+                    <div> <p><b>Sport:</b><br><i>Tennis</i><br><i>Volleyball</i></p>
+                    </div>
+                    <div class="action">
+                      <h3>6500</h3>
+                      <a href="Booking.html">Book Now</a></div>
+                  </div>
+                  
                 </div>
+                <div class="rating"><img src="/Quickbook/3star.png" alt=""></div>
+
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Banglore</h2>
                   </div>
-                  <div>
-                    <h3>8500</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>
-                 
-                </div>
+                 </div>
               </div>
+
               <div class="product" data-name="Cricket" data-date="2024-07-20">
                 <img src="/Quickbook/banglore4.jpg" alt="" usemap="#img3"/>
                 <map name="img3">
                   <area shape="default" coords="" href="https://maps.app.goo.gl/G4yq3L7NpGMifcKfA" alt="Delhi">
                 </map>
+                <div class="open">Show More</div>
+
                 <div id="feedback">
-                  <div id="Sport-type">
+                  <div id="SportField">
                     <h5>Cricket Field</h5>
                   </div>
-                  <div id="response">
-                      <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
-
+                  <div id="location">
+                <p><strong>Address:</strong><br><i>Suraj Bhan DAV Public School,
+                  Poorvi Marg, New Delhi, Delhi 110057</i></p>
+                   
                   </div>
-                 
+                  <div id="prc">
+                    <div> <p><b>Sport:</b><br><i>Football</i><br><i>Cricket</i></p>
+                    </div>
+                    <div class="action">
+<h3>8500</h3>                      <a href="Booking.html">Book Now</a></div>
+                  </div>
                 </div>
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Banglore</h2>
                   </div>
-                  <div class="book">
-                     <h3>9000</h3>
-                    <a href="Booking.html">Book now</a>
-                  </div>
                 </div>
+                <div class="rating"><img src="/Quickbook/4star.png" alt=""></div>
               </div>
+
               <div class="product" data-name="Football" data-date="2024-07-20">
                 <img src="/Quickbook/Banglore2.jpg" alt="" usemap="#img4"/>
                 <map name="img4"><area shape="default" coords="" href="https://maps.app.goo.gl/YNedziv2VaXaoyxw6" alt=""></map>
+                
+                <div class="open">Show More</div>
                 <div id="feedback">
-                  <div id="Sport-type">
+                  <div id="SportField">
                     <h5>Football Field</h5>
                   </div>
-                  <div id="response">
-                      <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined"> favorite </span>
+                  <div id="location">
+                <p><strong>Address:</strong><br><i>Jan Path, Pratik Nagar,Jhotwara,Jaipur, 
+                  Rajasthan 302012</i></p>
+                   
                   </div>
+                  <div id="prc">
+                    <div> <p><b>Sport:</b><br><i>Tennis</i><br><i>Volleyball</i></p>
+                    </div>
+                    <div class="action">
+<h3>8500</h3>                      <a href="Booking.html">Book Now</a></div>
+                  </div>
+                  
                 </div>
+                
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Jaipur</h2>
                   </div>
-                  <div>
-                    <h3>7000</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>                </div>
+                                
+                </div>
+                <div class="rating"><img src="/Quickbook/4star.png" alt=""></div>
               </div>
               <div class="product" data-name="Football" data-date="2024-07-20">
                 <img src="/Quickbook/Banglore3.jpg" alt="" usemap="#img5"/>
                 <map name="img5">
                   <area shape="default" coords="" href="https://maps.app.goo.gl/hvb2rDmqSQqYgeGA6" alt="">
                 </map>
+                <div class="open">Show More</div>
                 <div id="feedback">
-                  <div id="Sport-type">
+                  <div id="SportField">
                     <h5>Football Field</h5>
                   </div>
-                  <div id="response">
-                      <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
-
+                  <div id="location">
+                <p><strong>Address:</strong><br><i> Chapparadahalli, Near GITAM University Banglore
+                </i></p>
+                   
                   </div>
-                 
+                  <div id="prc">
+                    <div> <p><b>Sport:</b><br><i>Tennis</i><br><i>Volleyball</i></p>
+                    </div>
+                    <div class="action">
+                      <h3>7500</h3>
+                      <a href="Booking.html">Book Now</a></div>
+                  </div>
+                  
                 </div>
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Banglore</h2>
                   </div>
-                  <div>
-                    <h3>7500</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>                </div>
+                                
+                </div>
+                <div class="rating"><img src="/Quickbook/3star.png" alt=""></div>
+
               </div>
               <div class="product" data-name="Football" data-date="2024-07-20">
                 <img src="/Quickbook/Banglore5.jpg" alt="" usemap="#img6" />
                 <map name="img6">
                   <area shape="default" coords="" href="https://maps.app.goo.gl/V6V6RGuEay4rCe5D7" alt="">
                 </map>
+                <div class="open">Show More</div>
                 <div id="feedback">
-                  <div id="Sport-type">
+                  <div id="SportField">
                     <h5>Football Field</h5>
                   </div>
-                  <div id="response">
-                      <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
-
+                  <div id="location">
+                <p><strong>Address:</strong><br><i>47,Bajanai Koil Street, RK Link Rd,
+                  Villivakkam, Chennai, Tamil Nadu</i></p>
+                   
                   </div>
-                 
+                  <div id="prc">
+                    <div> <p><b>Sport:</b><br><i>Tennis</i><br><i>Volleyball</i></p>
+                    </div>
+                    <div class="action">
+<h3>8500</h3>                      <a href="Booking.html">Book Now</a></div>
+                  </div>
+                  
                 </div>
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Chennai</h2>
                   </div>
-                  <div>
-                    <h3>8000</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>                </div>
+                                 
+                </div>
+                <div class="rating"><img src="/Quickbook/3star.png" alt=""></div>
+
               </div>
               <div class="product" data-name="Football" data-date="2024-07-20">
-                <img src="/Quickbook/Delhi2.jpg" alt="" usemap="#img7"/>
-                <map name="img7">
-                  <area shape="default" coords="" href="https://maps.app.goo.gl/wSC8swv8hNt7SBZY8" alt="Delhi">
-                </map>
-                <div id="feedback">
-                  <div id="Sport-type">
-                    <h5>Football Field</h5>
-                  </div>
-                  <div id="response">
-                      <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
-
-                  </div>
-                 
-                </div>
-                <div class="prod-detail">
-                  <div style="display: flex">
-                    <span class="material-symbols-outlined"> location_on </span>
-                    <h2>Delhi</h2>
-                  </div>
-                  <div>
-                    <h3>7500</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>                </div>
-              </div>
-              <div class="product" data-name="Basketball" data-date="2024-07-20">
                 <img src="/Quickbook/Delhi3.jpg" alt="" usemap="#img8"/>
                 <map name="img8">
                   <area shape="default" coords="" href="https://maps.app.goo.gl/Qhu8feb8CGAAZNhw5" alt="Delhi">
                 </map> 
+                <div class="open">Show More</div>
                 <div id="feedback">
-                  <div id="Sport-type">
-                    <h5>Basketball Field</h5>
+                  <div id="SportField">
+                    <h5>Football Field</h5>
                   </div>
-                  <div id="response">
-                      <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
-
+                  <div id="location">
+                <p><strong>Address:</strong><br><i>Summer Fields School,Greater Kailash-1 Kailash Colony,Greater Kailash</pre>
+                  </i></p>
+                   
                   </div>
-                 
+                  <div id="prc">
+                    <div> <p><b>Sport:</b><br><i>Tennis</i><br><i>Volleyball</i></p>
+                    </div>
+                    <div class="action">
+<h3>8500</h3>                      <a href="Booking.html">Book Now</a></div>
+                  </div>
+                  
                 </div>
+                
+                
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Delhi</h2>
                   </div>
-                  <div>
-                    <h3>8000</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>                </div>
+                                
+                </div>
+                <div class="rating"><img src="/Quickbook/3star.png" alt=""></div>
+
               </div>
               <div class="product" data-name="Football" data-date="2024-07-20">
                 <img src="/Quickbook/punjab1.jpg" alt="" usemap="#img9"/>
                 <map name="img9"><area shape="default" coords="" href="https://maps.app.goo.gl/zMuiVeoEtDNm7u5P6" alt=""></map>
-                <div id="feedback">
-                  <div id="Sport-type">
-                    <h5>Football Field</h5>
-                  </div>
-                  <div id="response">
-                      <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
-
-                  </div>
-                 
-                </div>
+                
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
-                    <h2>Punjab</h2>
+                    <h2>Delhi</h2>
                   </div>
-                  <div>
-                    <h3>9000</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>                </div>
+                  </div>
+                  <div class="open">Show More</div>
+                  <div id="feedback">
+                    <div id="SportField">
+                      <h5>Football Field</h5>
+                    </div>
+                    <div id="location">
+                  <p><strong>Address:</strong><br><i>Farm 31, 100  Feet Rd,  Ghitorni, New Delhi ,Delhi</i></p>
+                     
+                    </div>
+                    <div id="prc">
+                      <div> <p><b>Sport:</b><br><i>Tennis</i><br><i>Football</i></p>
+                      </div>
+                      <div class="action">
+  <h3>8500</h3>                        <a href="Booking.html">Book Now</a></div>
+                    </div>
+                    
+                  </div>
+                  <div class="rating"><img src="/Quickbook/3star.png" alt=""></div>
+
               </div>
               <div class="product" data-name="Football" data-date="2024-07-20">
                 <img src="/Quickbook/Punjab2.jpg" alt="" usemap="#img10"/>
                 <map name="img10"><area shape="default" coords="" href="https://maps.app.goo.gl/dMc44rP69JoVY4Xq9" alt="Punjab"></map>
                 
-                <div id="feedback">
-                  <div id="Sport-type">
-                    <h5>Football Field</h5>
-                  </div>
-                  <div id="response">
-                      <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
-
-                  </div>
-                 
-                </div>
+               
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Punjab</h2>
                   </div>
-                  <div>
-                    <h3>8000</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>                </div>
+                                 </div>
+                    <div class="open">Show More</div>
+                <div id="feedback">
+                  <div id="SportField">
+                    <h5>Football Field</h5>
+                  </div>
+                  <div id="location">
+                <p><strong>Address:</strong><br><i>MVC7+XHC,Loharka Rd,Gumtala 
+                  Sub Urban Ranjit Vihar,Nanngli, Amritsar</i></p>
+                   
+                  </div>
+                  <div id="prc">
+                    <div> <p><b>Sport:</b><br><i>Football</i><br><i>Volleyball</i></p>
+                    </div>
+                    <div class="action">
+                      <h3>8000
+                      </h3>
+                      <a href="Booking.html">Book Now</a></div>
+                  </div>
+                  
+                </div>
+                 
+                  <div class="rating"><img src="/Quickbook/3star.png" alt=""></div>
+
               </div>
               <div class="product" data-name="Football" data-date="2024-07-20">
                 <img src="/Quickbook/punjab3.jpg" alt="" usemap="#img11"/>
                 <map name="img11"><area shape="default" coords="" href="https://maps.app.goo.gl/uNnfMQRHAn91LLei9" alt="Patna"></map>
-                <div id="feedback">
-                  <div id="Sport-type">
-                    <h5>Football Field</h5>
-                  </div>
-                  <div id="response">
-                      <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
-
-                  </div>
-                 
-                </div>
+                
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Patna</h2>
                   </div>
-                  <div>
-                    <h3>7000</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>
+                  
                 </div>
+                <div class="open">Show More</div>
+                <div id="feedback">
+                  <div id="SportField">
+                    <h5>Football Field</h5>
+                  </div>
+                  <div id="location">
+                <p><strong>Address:</strong><br><i>Polson Road,beside Modern School,
+                  Yadav Colony,Digha Ghat,Patna</i></p>
+                   
+                  </div>
+                  <div id="prc">
+                    <div> <p><b>Sport:</b><br><i>Tennis</i><br><i>Football</i></p>
+                    </div>
+                    <div class="action">
+                      <h3>7000</h3>
+                      <a href="Booking.html">Book Now</a></div>
+                  </div>
+                  
+                </div>
+                <div class="rating"><img src="/Quickbook/3star.png" alt=""></div>
+
               </div>
               <div class="product" data-name="Cricket" data-date="2024-07-20">
                 <img src="/Quickbook/Kolkatta.jpg" alt="" usemap="#img12"/>
                 <map name="img12"><area shape="default" coords="" href="https://maps.app.goo.gl/agasvs6drTnoxWRW9" alt="">
                 </map>
-                <div id="feedback">
-                  <div id="Sport-type">
-                    <h5>Cricket Field</h5>
-                  </div>
-                  <div id="response">
-                      <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">favorite</span>
-                  </div>
-                 
-                </div>
+               
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Kolkatta</h2>
-                  </div>
-                  <div>
-                    <h3>7500</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>               
+                  </div>              
                 </div>
+                  <div class="open">Show More</div>
+                <div id="feedback">
+                  <div id="SportField">
+                    <h5>Cricket Field</h5>
+                  </div>
+                  <div id="location">
+                <p><strong>Address:</strong><br><i>Acharya Jagdish Chandra Bose Rd,
+                  Maidan,Race Course, Hastings, Kolkata</i></p>
+                   
+                  </div>
+                  <div id="prc">
+                    <div> <p><b>Sport:</b><br><i>Tennis</i><br><i>Volleyball</i></p>
+                    </div>
+                    <div class="action">
+<h3>8500</h3>                      <a href="Booking.html">Book Now</a></div>
+                  </div>
+                  
+                </div>
+                <div class="rating"><img src="/Quickbook/3star.png" alt=""></div>
+
               </div>
               <div class="product" data-name="Football" data-date="2024-07-20">
                 <img src="/Quickbook/Kerala9.jpg" alt="" usemap="#img13" />
                 <map name="#img13"><area shape="default" coords="" href="https://maps.app.goo.gl/qEN8T4xnYuh3fbJZ9" alt="Delhi Map"></map>
-                <div id="feedback">
-                  <div id="Sport-type">
-                    <h5>Football Field</h5>
-                  </div>
-                  <div id="response">
-                      <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
-
-                  </div>
-                 
-                </div>
+               
                 <div class="prod-detail">
                   <div id="pro" style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Delhi</h2>
                   </div>
-                  <div>
-                    <h3>8500</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>
+                 
                 </div>
+                <pre></pre>
+                  <div class="open">Show More</div>
+                <div id="feedback">
+                  <div id="SportField">
+                    <h5>Football Field</h5>
+                  </div>
+                  <div id="location">
+                <p><strong>Address:</strong><br><i>inside Ramjas Sports Complex, Block 36,
+                  West Patel Nagar,Patel Nagar,Delhi</i></p>
+                   
+                  </div>
+                  <div id="prc">
+                    <div> <p><b>Sport:</b><br><i>Tennis</i><br><i>Volleyball</i></p>
+                    </div>
+                    <div class="action">
+<h3>7500</h3>                      <a href="Booking.html">Book Now</a></div>
+                  </div>
+                  
+                </div>
+                <div class="rating"><img src="/Quickbook/3star.png" alt=""></div>
+
               </div>
 
               <div class="product" data-name="Football" data-date="2024-07-20">
                 <img src="/Quickbook/Hyderabad1.jpg" alt="" usemap="#img14"/>
                 <map name="img14"><area shape="default" coords="" href="https://maps.app.goo.gl/jxNCMiRfdCrds2PT8" alt=""></map>
                 <div id="feedback">
-                  <div id="Sport-type">
+                  <div id="SportField">
                     <h5>Football Field</h5>
                   </div>
-                  <div id="response">
-                      <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
+                  <div id="location">
+                <p><strong>Address:</strong><br><i>Polson Dairy Road,near Patliputra
+                  Rail-Parisar,Nirala Nagar,Birla Colony</i></p>
+                   
                   </div>
-                 
+                  <div id="prc">
+                    <div> <p><b>Sport:</b><br><i>Tennis</i><br><i>Football</i></p>
+                    </div>
+                    <div class="action">
+                      <h3>7500</h3>
+                      <a href="Booking.html">Book Now</a></div>
+                  </div>
+                  
                 </div>
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Patna</h2>
                   </div>
-                  <div>
-                    <h3>8000</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>
+                 
                  
                 </div>
+                <pre></pre>
+                
+                <div class="rating"><img src="/Quickbook/3star.png" alt=""></div>
+
               </div>
               <div class="product" data-name="Football" data-date="2024-07-20">
                 <img src="/Quickbook/Hyderabad.jpg" alt="" usemap="#img15" />
                 <map name="img15"><area shape="default" coords="" href="https://maps.app.goo.gl/Wdf3jnWmpHDJwKZL7
                   " alt=""></map>
-                  <div id="feedback">
-                    <div id="Sport-type">
-                      <h5>Football Field</h5>
-                    </div>
-                    <div id="response">
-                      <span class="material-symbols-outlined">thumb_up</span>
-                      <span class="material-symbols-outlined">thumb_down</span>
-                      <span class="material-symbols-outlined">
-                        favorite
-                        </span>
-  
-                    </div>
-                   
-                  </div>
+                  
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Patna</h2>
                   </div>
-                  <div class="book">
-                <h3>9000</h3>
-                    <a href="Booking.html">Book now</a>
-                  </div>
+                  
                 </div>
+                  <div class="open">Show More</div>
+
+                    <div id="feedback">
+                    <div id="SportField">
+                      <h5>Football Field</h5>
+                    </div>
+                    <div id="location">
+                  <p><strong>Address:</strong><br><i>Atal Path,Yadav Colony,Digha Ghat,
+                    Patna,Bihar 800011</i></p>
+                     
+                    </div>
+                    <div id="prc">
+                      <div> <p><b>Sport:</b><br><i>Tennis</i><br><i>Football</i></p>
+                      </div>
+                      <div class="action">
+                        <h3>7500</h3>
+                        <a href="Booking.html">Book Now</a></div>
+                    </div>
+                    
+                  </div>
+                <div class="rating"><img src="/Quickbook/3star.png" alt=""></div>
+
               </div>
               <div class="product" data-name="Football" data-date="2024-07-20">
                 <img src="/Quickbook/mumbai2.jpg" alt="" usemap="#img16" />
                 <map name="img16"><area shape="default" coords="" href="https://maps.app.goo.gl/eqQdPuzZ7s32hwSB6" alt="Mumbai"></map>
-                <div id="feedback">
-                  <div id="Sport-type">
-                    <h5>Football Field</h5>
-                  </div>
-                  <div id="response">
-                      <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
-
-                  </div>
-                 
-                </div>
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Mumbai</h2>
                   </div>
-                  <div>
-                    <h3>7000</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>                
+                                
                 </div>
+                  <div class="open">Show More</div>
+                  <div id="feedback">
+                    <div id="SportField">
+                      <h5>Football Field</h5>
+                    </div>
+                    <div id="location">
+                  <p><strong>Address:</strong><br><i>Royal Western India Turf Club
+                    Mahalakshmi Mumbai,Maharashtra</i></p>
+                     
+                    </div>
+                    <div id="prc">
+                      <div> <p><b>Sport:</b><br><i>Football</i><br><i>Volleyball</i></p>
+                      </div>
+                      <div class="action">
+  <h3>7500</h3>                        <a href="Booking.html">Book Now</a></div>
+                    </div>
+                    
+                  </div>
+                <div class="rating"><img src="/Quickbook/3star.png" alt=""></div>
+
               </div>
               <div class="product" data-name="Basketball" data-date="2024-07-20">
                 <img src="/Quickbook/mumbai1.jpg" alt="" usemap="#img17"/>
                 <map name="img17"><area shape="" coords="" href="https://maps.app.goo.gl/2HRREx6N2cLQuQY57" alt="Mumbai Map"></map>
-                <div id="feedback">
-                  <div id="Sport-type">
-                    <h5>Basketball Field</h5>
-                  </div>
-                  <div id="response">
-                      <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
-
-                  </div>
-                 
-                </div>
+                
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Mumbai</h2>
                   </div>
-                  <div>
-                    <h3>7500</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>                
+                                
                 </div>
+               
+                <div id="feedback">
+                  <div id="SportField">
+                    <h5>Basketball Field</h5>
+                  </div>
+                  <div id="location">
+                <p><strong>Address:</strong><br><i>Atal Path,Yadav Colony,Digha Ghat,
+                  Patna,Bihar 800011</i></p>
+                   
+                  </div>
+                  <div id="prc">
+                    <div> <p><b>Sport:</b><br><i>Tennis</i><br><i>Football</i></p>
+                    </div>
+                    <div class="action">
+                      <h3>7500</h3>
+                      <a href="Booking.html">Book Now</a></div>
+                  </div>
+                  
+                </div>
+                <div class="rating"><img src="/Quickbook/3star.png" alt=""></div>
+
               </div>
               <div class="product" data-name="Volleyball" data-date="2024-07-20">
                 <img src="/Quickbook/Chennai3.jpg" alt="Chennai"  usemap="#img18"/>
                 <map name="img18"><area shape="default" coords="" href="https://maps.app.goo.gl/V6V6RGuEay4rCe5D7" alt="Chennai"></map>
-                <div id="feedback">
-                  <div id="Sport-type">
-                    <h5>Volleyball Field</h5>
-                  </div>
-                  <div id="response">
-                      <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
-
-                  </div>
-                 
-                </div>
+              
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Chennai</h2>
                   </div>
-                  <div>
-                    <h3>8000</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>                
+                                 
                 </div>
+                  <div class="open">Show More</div>
+                  <div id="feedback">
+                    <div id="SportField">
+                      <h5>Volleyball Field</h5>
+                    </div>
+                    <div id="location">
+                  <p><strong>Address:</strong><br><i>47,Bajanai Koil Street,RK Rd, 
+                    Thathan Kuppam,Villivakkam</i></p>
+                     
+                    </div>
+                    <div id="prc">
+                      <div> <p><b>Sport:</b><br><i>Tennis</i><br><i>Volleyball</i></p>
+                      </div>
+                      <div class="action">
+  <h3>8500</h3>                        <a href="Booking.html">Book Now</a></div>
+                    </div>
+                    
+                  </div>
+                <div class="rating"><img src="/Quickbook/3star.png" alt=""></div>
+
               </div>
               <div class="product" data-name="Cricket" data-date="2024-07-20">
                 <img src="/Quickbook/Chennai2.jpg" alt="Chennai" usemap="#img19"/>
                 <map name="img19"><area shape="default" coords="" href="https://maps.app.goo.gl/DhFQ6W9rviNuzGiq6" alt="Chennai"></map>
-                <div id="feedback">
-                  <div id="Sport-type">
-                    <h5>Cricket Field</h5>
-                  </div>
-                  <div id="response">
-                      <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
-
-                  </div>
-                 
-                </div>
+               
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Chennai</h2>
                   </div>
-                  <div>
-                    <h3>7500</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>                
+                               
                 </div>
+                  <div class="open">Show More</div>
+                  <div id="feedback">
+                    <div id="SportField">
+                      <h5>Cricket Field</h5>
+                    </div>
+                    <div id="location">
+                  <p><strong>Address:</strong><br><i>Thiruvottiyur High Rd,Kasipuram,
+                    Tondiarpet,Chennai</i></p>
+                     
+                    </div>
+                    <div id="prc">
+                      <div> <p><b>Sport:</b><br><i>Tennis</i><br><i>Volleyball</i></p>
+                      </div>
+                      <div class="action">
+  <h3>8500</h3>                        <a href="Booking.html">Book Now</a></div>
+                    </div>
+                    
+                  </div>
+                <div class="rating"><img src="/Quickbook/3star.png" alt=""></div>
+
               </div>
               <div class="product" data-name="Cricket" data-date="2024-07-20">
                 <img src="/Quickbook/Chennai.jpg" alt="" usemap="#img20" />
                 <map name="img20"><area shape="default" coords="" href="https://maps.app.goo.gl/Ar4hRGtGUs5mLobQ9	" alt=""></map>
-                <div id="feedback">
-                  <div id="Sport-type">
-                    <h5>Cricket Field</h5>
-                  </div>
-                  <div id="response">
-                    <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">favorite</span></div>
-                </div>
+                
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Chennai</h2>
                   </div>
-                  <div>
-                    <h3>8000</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>               
+                               
                  </div>
+                   <div class="open">Show More</div>
+                <div id="feedback">
+                  <div id="SportField">
+                    <h5>Cricket Field</h5>
+                  </div>
+                  <div id="location">
+                <p><strong>Address:</strong><br><i>Moolachathiram road,Krishna 
+                  Nagar,Madhavaram Milk Colony</i></p>
+                   
+                  </div>
+                  <div id="prc">
+                    <div> <p><b>Sport:</b><br><i>Football</i><br><i>Cricket</i></p>
+                    </div>
+                    <div class="action">
+<h3>7500</h3>                      <a href="Booking.html">Book Now</a></div>
+                  </div>
+                  
+                </div>
+                <div class="rating"><img src="/Quickbook/3star.png" alt=""></div>
               </div>
               <div class="product" data-name="Cricket" data-date="2024-07-20">
                 <img src="/Quickbook/Kerala4.jpg" alt="" usemap="#img21"/>
-                <map name="img12"><area shape="default" coords="" href="https://maps.app.goo.gl/kGNBLrzYL4JV9zTEA" alt=""></map>
-                <div id="feedback">
-                  <div id="Sport-type">
-                    <h5>Cricket Field</h5>
-                  </div>
-                  <div id="response">
-                    <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
-
-                  </div>
-                 
-                </div>
+                <map name="img12"><area shape="default" coords="" href="https://maps.app.goo.gl/YNedziv2VaXaoyxw6" alt=""></map>
+               
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Kerala</h2>
                   </div>
-                  <div>
-                    <h3>9000</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>                </div>
+                               
+                 </div>
+                  <div class="open">Show More</div>
+                  <div id="feedback">
+                    <div id="SportField">
+                      <h5>Cricket Field</h5>
+                    </div>
+                    <div id="location">
+                  <p><strong>Address:</strong><br><i>Kottakuziyil, Kottayam, Kerala 587906 </i></p>
+                     
+                    </div>
+                    <div id="prc">
+                      <div> <p><b>Sport:</b><br><i>Cricket</i><br><i>Volleyball</i></p>
+                      </div>
+                      <div class="action">
+  <h3>6500</h3>                        <a href="Booking.html">Book Now</a></div>
+                    </div>  
+                  </div>
+                  <div class="rating"><img src="/Quickbook/3star.png" alt=""></div>
+
               </div>
               <div class="product" data-name="Cricket" data-date="2024-07-20">
                 <img src="/Quickbook/Kerala3.jpg" alt="" usemap="#img22"/>
                 <map name="img22"><area shape="default" coords="" href="https://maps.app.goo.gl/yvXdUYCSnNxVxPbU9" alt=""></map>
+                <div class="open">Show More</div>
                 <div id="feedback">
-                  <div id="Sport-type">
-                    <h5>Volleyball Field</h5>
+                  <div id="SportField">
+                    <h5>Cricket Field</h5>
                   </div>
-                  <div id="response">
-                    <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
+                  <div id="location">
+                <p><strong>Address:</strong><br><i>78C6+25X,Kadukutty,Kerala  680309</i></p>
+                   
                   </div>
-                 
+                  <div id="prc">
+                    <div> <p><b>Sport:</b><br><i>Football</i><br><i>Cricket</i></p>
+                    </div>
+                    <div class="action">
+<h3>7500</h3>                      <a href="Booking.html">Book Now</a></div>
+                  </div>  
                 </div>
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Kerala</h2>
                   </div>
-                  <div>
-                    <h3>8000</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>                </div>
+                             </div>
+                 
+                  <div class="rating"><img src="/Quickbook/3star.png" alt=""></div>
+
               </div>
               <div class="product" data-name="Volleyball" data-date="2024-07-20">
                 <img src="/Quickbook/kerala2.jpg" alt="" usemap="#img23"/>
                 <map name="img23"><area shape="default" coords="" href="https://maps.app.goo.gl/qz4L2ympbq56LCWR7" alt=""></map>
+                <div class="open">Show More</div>
                 <div id="feedback">
-                  <div id="Sport-type">
+                  <div id="SportField">
                     <h5>Volleyball Field</h5>
                   </div>
-                  <div id="response">
-                    <span class="material-symbols-outlined">thumb_up </span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
+                  <div id="location">
+                <p><strong>Address:</strong><br><i>78C6+25X,Kadukutty,Kerala 680309</i></p>
+                   
                   </div>
-                 
+                  <div id="prc">
+                    <div> <p><b>Sport:</b><br><i>Tennis</i><br><i>Volleyball</i></p>
+                    </div>
+                    <div class="action">
+<h3>6500</h3>                      <a href="Booking.html">Book Now</a></div>
+                  </div>  
                 </div>
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Kerala</h2>
                   </div>
-                  <div>
-                    <h3>7000</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>                </div>
+                </div>
+                <div class="rating"><img src="/Quickbook/4star.png" alt=""></div>
               </div>
               <div class="product" data-name="Volleyball" data-date="2024-07-20">
                 <img src="/Quickbook/Kerala1.jpg" alt="" usemap="#img24" />
                 <map name="img24"><area shape="default" coords="" href="https://maps.app.goo.gl/ezWNbnojum4UC5iS7" alt=""></map>
-                <div id="feedback">
-                  <div id="Sport-type">
-                    <h5>Volleyball Field</h5>
-                  </div>
-                  <div id="response">
-                    <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
-                  </div>
-                 
-                </div>
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Kerala</h2>
                   </div>
-                  <div>
-                    <h3>8500</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>                </div>
+                </div>
+                <div class="open">Show More</div>
+                <div id="feedback">
+                  <div id="SportField">
+                    <h5>Volleyball Field</h5>
+                  </div>
+                  <div id="location">
+                <p><strong>Address:</strong><br><i>QJX6+JWQ,Uzhavoor-Koothattukulam Rd,Uzhavoor,Kerala 686634</i></p>
+                   
+                  </div>
+                  <div id="prc">
+                    <div> <p><b>Sport:</b><br><i>Tennis</i><br><i>Volleyball</i></p>
+                    </div>
+                    <div class="action">
+                      <h3>7500</h3>
+                      <a href="Booking.html">Book Now</a></div>
+                  </div>
+                  
+                </div>
+                  <div class="rating"><img src="/Quickbook/4star.png" alt=""></div>
+
               </div>
               <div class="product" data-name="Volleyball" data-date="2024-07-20">
                 <img src="/Quickbook/Jaipur2.jpg" alt="" usemap="#img24" />
-                <map name="img24"><area shape="default" coords="" href="https://maps.app.goo.gl/aSBh6ZjvQC6xnUBE9" alt=""></map>
-                <div id="feedback">
-                  <div id="Sport-type">
-                    <h5>Volleyball Field</h5>
-                  </div>
-                  <div id="response">
-                    <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
-                  </div>
-                 
-                </div>
+                <map name="img24"><area shape="default" coords="" href="https://maps.app.goo.gl/mNqnoLf9QESSS4eJA" alt=""></map>
+                
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Jaipur</h2>
                   </div>
-                  <div>
-                    <h3>7500</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>                </div>
+                 </div>
+                  <div class="open">Show More</div>
+                  <div id="feedback">
+                    <div id="SportField">
+                      <h5>Volleyball Field</h5>
+                    </div>
+                    <div id="location">
+                  <p><strong>Address:</strong><br><i>25/14 Regal Sports Club Opp- Rangoli Garden,Maharana Pratap Road</i></p>
+                     
+                    </div>
+                    <div id="prc">
+                      <div> <p><b>Sport:</b><br><i>Tennis</i><br><i>Volleyball</i></p>
+                      </div>
+                      <div class="action">
+                        <h3>7500</h3>
+                        <a href="Booking.html">Book Now</a></div>
+                    </div>
+                    
+                  </div>
+                  <div class="rating"><img src="/Quickbook/4star.png" alt=""></div>
+
               </div>
               <div class="product" data-name="Volleyball" data-date="2024-07-20">
                 <img src="/Quickbook/Jaipur1.jpg" alt="" usemap="#img24" />
-                <div id="feedback">
-                  <div id="Sport-type">
-                    <h5>Volleyball Field</h5>
-                  </div>
-                  <div id="response">
-                    <span class="material-symbols-outlined">thumb_up</span>
-                    <span class="material-symbols-outlined">thumb_down</span>
-                    <span class="material-symbols-outlined">
-                      favorite
-                      </span>
-
-                  </div>
-                 
-                </div>
-                <map name="img24"><area shape="default" coords="" href="https://maps.app.goo.gl/YNedziv2VaXaoyxw6" alt=""></map>
+                
+                <map name="img24"><area shape="default" coords="" href="https://maps.app.goo.gl/aSBh6ZjvQC6xnUBE9		" alt=""></map>
                 <div class="prod-detail">
                   <div style="display: flex">
                     <span class="material-symbols-outlined"> location_on </span>
                     <h2>Jaipur</h2>
                   </div>
-                  <div>
-                    <h3>7500</h3>
-                    <a href="Booking.html">Book Now</a>
-                  </div>                </div>
+                                 
+                </div>
+                  <div class="open">Show More</div>
+                  <div id="feedback">
+                    <div id="SportField">
+                      <h5>Volleyball Field</h5>
+                    </div>
+                    <div id="location">
+                  <p><strong>Address:</strong><br><i>Ganesh Nagar - II, near Coaching hub,Sheopur, Jagatpura,Jaipur</i></p>
+                     
+                    </div>
+                    <div id="prc">
+                      <div> <p><b>Sport:</b><br><i>Tennis</i><br><i>Volleyball</i></p>
+                      </div>
+                      <div class="action">
+  <h3>8500</h3>                        <a href="Booking.html">Book Now</a></div>
+                    </div>
+                    
+                  </div>
+                  <div class="rating"><img src="/Quickbook/4star.png" alt=""></div>
+
               </div>
             </div>
           </div>
+
         </main> 
     
     </div>
     <script src="filter.js"></script>
+    <!-- <script src="../filter/searching.js"></script> -->
   </body>
 </html>
